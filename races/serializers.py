@@ -13,7 +13,8 @@ class TicketSerializer(ModelSerializer):
 
     def create(self, validated_data):
         ticket = races_models.Ticket(**validated_data)
-        ticket.created_at = timezone.now()
-        ticket.updated_at = timezone.now()
+        update_time = timezone.now()
+        ticket.created_at = update_time
+        ticket.updated_at = update_time
         ticket.save()
         return ticket

@@ -1,10 +1,9 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework.generics import ListCreateAPIView
 
-from races import api as races_api
+from races import models as races_models
+from races import serializers as races_serializers
 
 
-class ListRaceStarts(APIView):
-
-    def get(self, request, *args, **kwargs):
-        return Response(races_api.load_race_data())
+class ListCreateTickets(ListCreateAPIView):
+    queryset = races_models.Ticket.objects.all()
+    serializer_class = races_serializers.TicketSerializer

@@ -5,7 +5,9 @@ from races import models as races_models
 
 
 class TicketSerializer(ModelSerializer):
-
+    """
+    Serializer for Ticket
+    """
     class Meta:
         model = races_models.Ticket
         exclude = ['dataset_id']

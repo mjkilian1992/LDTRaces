@@ -28,7 +28,7 @@
       { "id": "addressCity", "name": "Address (City)", "value": "London" },
       {
         "id": "addressPostcode",
-        "name": "Address (Postcode)",
+        "name":"Address (Postcode)",
         "value": "NW2 8EE"
       },
       {

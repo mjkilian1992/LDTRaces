@@ -5,12 +5,15 @@ class Ticket(models.Model):
     """
     Basic model for an individuals ticket to a race
     """
-    eventID = models.CharField(max_length=8)
-    raceID = models.CharField(max_length=8)
-    ticketID = models.CharField(max_length=8)
-    eventTitle = models.TextField()
-    raceTitle = models.TextField()
-    ticketTitle = models.TextField()
-    firstName = models.CharField(max_length=32)
-    lastName = models.CharField(max_length=32)
+    # Not to be confused with the primary key - used to track back to original dataset
+    dataset_id = models.IntegerField(unique=True, null=True)
+
+    event_id = models.CharField(max_length=8)
+    race_id = models.CharField(max_length=8)
+    ticket_id = models.CharField(max_length=8)
+    event_title = models.TextField()
+    race_title = models.TextField()
+    ticket_title = models.TextField()
+    first_name = models.CharField(max_length=32)
+    last_name = models.CharField(max_length=32)
     email = models.EmailField()
